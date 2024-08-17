@@ -10,8 +10,8 @@
 
 ### Links
 
-- Solution URL: []()
-- Live Site URL: []()
+- Solution URL: [https://www.frontendmentor.io/solutions/social-proof-section-using-sass-G6QucNKORb](https://www.frontendmentor.io/solutions/social-proof-section-using-sass-G6QucNKORb)
+- Live Site URL: [https://codermoshiur.github.io/social-proof-section/](https://codermoshiur.github.io/social-proof-section/)
 
 ## My process
 
