@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  font-family: "LeagueSpartan-Medium", sans-serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "LeagueSpartan-Bold", sans-serif;
+  overflow-wrap: break-word;
+}
+
+@font-face {
+  src: url(../assets/fonts/LeagueSpartan-Bold.ttf);
+  font-family: "LeagueSpartan-Bold";
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  src: url(../assets/fonts/LeagueSpartan-Medium.ttf);
+  font-family: "LeagueSpartan-Medium";
+  font-weight: 500;
+  font-display: swap;
+}
+.container {
+  max-width: min(100%, 69.375rem);
+  margin-inline: auto;
+  padding: 0 1.5rem;
+}
+
+.social-proof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 5rem 0;
+  position: relative;
+}
+.social-proof::before {
+  content: "";
+  background-image: url(../assets/images/bg-pattern-top-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 23.375rem;
+  height: 14.5rem;
+  top: 0;
+  left: 0;
+  display: block;
+}
+@media (min-width: 64.0625rem) {
+  .social-proof::before {
+    background-image: url(../assets/images/bg-pattern-top-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 36.5rem;
+    height: 22.625rem;
+  }
+}
+.social-proof::after {
+  content: "";
+  background-image: url(../assets/images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 67.8125rem;
+  height: 42.0625rem;
+  display: block;
+}
+@media (min-width: 64.0625rem) {
+  .social-proof::after {
+    background-image: url(../assets/images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.service {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 2.5rem;
+  margin-bottom: 3.0625rem;
+  justify-content: center;
+  text-align: center;
+}
+@media (min-width: 64.0625rem) {
+  .service {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 4.5rem;
+    text-align: left;
+  }
+}
+.service__content {
+  max-width: 27.8125rem;
+}
+.service__title {
+  font-size: 2.5rem;
+  line-height: 2rem;
+  letter-spacing: -0.0894rem;
+  color: #512051;
+  margin-bottom: 1rem;
+}
+@media (min-width: 64.0625rem) {
+  .service__title {
+    font-size: 3.5rem;
+    line-height: 3rem;
+  }
+}
+.service__description {
+  font-size: 1.1875rem;
+  line-height: 1.5625rem;
+  letter-spacing: -0.0394rem;
+  color: #927b91;
+}
+.service__rating {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: end;
+}
+.service__rating-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #f7f2f7;
+  border-radius: 0.5rem;
+  padding: 1.25rem 2rem;
+  width: min(100%, 27.8125rem);
+}
+@media (min-width: 64.0625rem) {
+  .service__rating-info {
+    flex-direction: row;
+  }
+  .service__rating-info:nth-child(1) {
+    margin-right: 5.875rem;
+  }
+  .service__rating-info:nth-child(2) {
+    margin-right: 2.9375rem;
+  }
+}
+.service__rating-star {
+  display: flex;
+  justify-content: center;
+}
+.service__icon-star {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+.service__rating-description {
+  color: #512051;
+  font-size: 1.0625rem;
+}
+
+.user-feedback {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1rem;
+}
+@media (min-width: 64.0625rem) {
+  .user-feedback {
+    grid-template-columns: repeat(3, auto);
+    gap: 1.875rem;
+  }
+}
+.user-feedback__item {
+  background-color: #512051;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: min(100%, 27.8125rem);
+  margin-inline: auto;
+}
+@media (min-width: 64.0625rem) {
+  .user-feedback__item:nth-child(2) {
+    margin-top: 1rem;
+  }
+  .user-feedback__item:nth-child(3) {
+    margin-top: 2rem;
+  }
+}
+
+.card__header {
+  display: flex;
+  gap: 1.4375rem;
+  margin-bottom: 2rem;
+}
+.card__body {
+  color: #fff;
+  font-size: 1.0625rem;
+  letter-spacing: -0.0187rem;
+}
+
+.client-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.client__name {
+  font-size: 1.0625rem;
+  color: #fff;
+}
+.client__role {
+  color: #ee69a4;
+}
+
+/*# sourceMappingURL=main.css.map */

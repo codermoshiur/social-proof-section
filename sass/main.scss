@@ -1,0 +1,248 @@
+//reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  font-family: "LeagueSpartan-Medium", sans-serif;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p {
+  overflow-wrap: break-word;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "LeagueSpartan-Bold", sans-serif;
+  overflow-wrap: break-word;
+}
+//fonts
+@font-face {
+  src: url(../assets/fonts/LeagueSpartan-Bold.ttf);
+  font-family: "LeagueSpartan-Bold";
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  src: url(../assets/fonts/LeagueSpartan-Medium.ttf);
+  font-family: "LeagueSpartan-Medium";
+  font-weight: 500;
+  font-display: swap;
+}
+// variables
+$clr-murasaki: #512051;
+$clr-lepidolite-purple: #927b91;
+$clr-spanish-grey: #979797;
+$clr-abalone: #f7f2f7;
+$clr-white: #fff;
+$clr-fugitive-flamingo: #ee69a4;
+//mixins
+@mixin laptop {
+  @media (min-width: 64.0625rem) {
+    @content;
+  }
+}
+//global styles
+.container {
+  max-width: min(100%, 69.375rem);
+  margin-inline: auto;
+  padding: 0 1.5rem;
+}
+// social proof
+.social-proof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 5rem 0;
+  position: relative;
+  &::before {
+    content: "";
+    background: {
+      image: url(../assets/images/bg-pattern-top-mobile.svg);
+      repeat: no-repeat;
+      size: cover;
+    }
+    position: absolute;
+    width: 23.375rem;
+    height: 14.5rem;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+  @include laptop {
+    &::before {
+      background: {
+        image: url(../assets/images/bg-pattern-top-desktop.svg);
+        repeat: no-repeat;
+        size: cover;
+      }
+      width: 36.5rem;
+      height: 22.625rem;
+    }
+  }
+  &::after {
+    content: "";
+    background: {
+      image: url(../assets/images/bg-pattern-bottom-mobile.svg);
+      repeat: no-repeat;
+      size: cover;
+    }
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 67.8125rem;
+    height: 42.0625rem;
+    display: block;
+  }
+  @include laptop {
+    &::after {
+      background: {
+        image: url(../assets/images/bg-pattern-bottom-desktop.svg);
+        repeat: no-repeat;
+        size: cover;
+      }
+    }
+  }
+}
+.service {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 2.5rem;
+  margin-bottom: 3.0625rem;
+  justify-content: center;
+  text-align: center;
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 4.5rem;
+    text-align: left;
+  }
+  &__content {
+    max-width: 27.8125rem;
+  }
+  &__title {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.0894rem;
+    color: $clr-murasaki;
+    margin-bottom: 1rem;
+    @include laptop {
+      font-size: 3.5rem;
+      line-height: 3rem;
+    }
+  }
+  &__description {
+    font-size: 1.1875rem;
+    line-height: 1.5625rem;
+    letter-spacing: -0.0394rem;
+    color: $clr-lepidolite-purple;
+  }
+  &__rating {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: end;
+  }
+  &__rating-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: $clr-abalone;
+    border-radius: 0.5rem;
+    padding: 1.25rem 2rem;
+    width: min(100%, 27.8125rem);
+    @include laptop {
+      flex-direction: row;
+      &:nth-child(1) {
+        margin-right: 5.875rem;
+      }
+      &:nth-child(2) {
+        margin-right: 2.9375rem;
+      }
+    }
+  }
+  &__rating-star {
+    display: flex;
+    justify-content: center;
+  }
+  &__icon-star {
+    width: 0.9375rem;
+    height: 0.9375rem;
+  }
+  &__rating-description {
+    color: $clr-murasaki;
+    font-size: 1.0625rem;
+  }
+}
+.user-feedback {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1rem;
+  @include laptop {
+    grid-template-columns: repeat(3, auto);
+    gap: 1.875rem;
+  }
+  &__item {
+    background-color: $clr-murasaki;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: min(100%, 27.8125rem);
+    margin-inline: auto;
+    @include laptop {
+      &:nth-child(2) {
+        margin-top: 1rem;
+      }
+      &:nth-child(3) {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+.card {
+  &__header {
+    display: flex;
+    gap: 1.4375rem;
+    margin-bottom: 2rem;
+  }
+  &__body {
+    color: $clr-white;
+    font-size: 1.0625rem;
+    letter-spacing: -0.0187rem;
+  }
+}
+.client-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.client {
+  &__name {
+    font-size: 1.0625rem;
+    color: $clr-white;
+  }
+  &__role {
+    color: $clr-fugitive-flamingo;
+  }
+}
